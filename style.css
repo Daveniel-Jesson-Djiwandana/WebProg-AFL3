@@ -27,7 +27,11 @@ body::-webkit-scrollbar, html::-webkit-scrollbar {
   position: relative;
   transition: color 0.3s ease;
 }
-
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 .navLinks:hover {
   color: var(--secondary-color);
@@ -90,4 +94,28 @@ body::-webkit-scrollbar, html::-webkit-scrollbar {
 }
 .cardShadow {
   background-color: rgb(0, 0, 0, 0.5);
+}
+.coverflow {
+  width: 100vw;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  overflow: visible;
+}
+
+.coverflow-card {
+  position: absolute;
+  width: 30vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease, filter 0.5s ease;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
 }

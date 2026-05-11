@@ -27,8 +27,8 @@
       <ul class="flex space-x-10">
         <li><a class="navLinks" href="index.html">HOME</a></li>
         <li><a class="navLinks" href="about.html">ABOUT</a></li>
-        <li><a class="active navLinks" href="hobby.html">HOBBY</a></li>
-        <li><a class="navLinks" href="gallery.html">GALLERY</a></li>
+        <li><a class="navLinks" href="hobby.html">HOBBY</a></li>
+        <li><a class="active navLinks" href="gallery.html">GALLERY</a></li>
       </ul>
     </nav>
     <div
@@ -40,71 +40,37 @@
         class="absolute top-0 bottom-0 left-0 right-0 z-0"
       >
         <div
+          class="shape absolute top-0 -left-35 w-90 h-90 rounded-full"
+        ></div>
+        <div
+          class="shapeline absolute top-55 -left-55 w-210 h-0 rotate-120"
+        ></div>
+        <div
+          class="shapeline absolute bottom-5 -left-55 w-210 h-0 rotate-40"
+        ></div>
+        <div
           class="shape absolute top-0 -right-35 w-90 h-90 rounded-full"
         ></div>
-        <div class="shape absolute top-50 -right-45 w-120 h-70 rotate-0"></div>
+        <div class="shape absolute -top-10 -right-55 w-120 h-70 rotate-100"></div>
+        <div class="shape absolute top-25 -right-85 w-120 h-70 rotate-130"></div>
         <div
-          class="shapeline absolute top-55 left-5 w-550 h-0 rotate-240"
+          class="shapeline absolute top-30 -right-45 w-210 h-0 rotate-50"
         ></div>
-        <div
-          class="shapeline absolute top-55 left-50 w-550 h-0 rotate-240"
-        ></div>
-        <div
-          class="shape absolute bottom-50 -left-75 w-90 h-90 rounded-full"
-        ></div>
-        <div class="shape absolute bottom-0 -left-10 w-150 h-70 rotate-0"></div>
-        <div class="shape absolute -bottom-10 left-40 w-50 h-90 rotate-0"></div>
-        <div
-          class="shapeline absolute bottom-0 -left-80 w-550 h-0 rotate-25"
-        ></div>
+        
       </div>
       <div
         class="absolute top-0 bottom-0 left-0 right-0 z-10 darkOverlayNormal"
       ></div>
-      
-
-      <div class="absolute left-16 top-50 z-80 max-w-[46vw]">
-        <h1
-          class="poppins-bold text-[9rem] leading-none tracking-tighter text-white"
-        >
-          HOBBY
-        </h1>
-        <hr class="border-[#D98852] border-t-3 my-4" />
-        <div class="paragraphBG p-2 rounded">
-          <p class="text-white text-[1.5rem] leading-relaxed text-justify">
-            Over the years, I have had the same hobby which is reading,
-            specifically manhwas (Korean comics). They have been a big part of
-            my life where almost every second of my free time is reading these
-            manhwas. I have read more than 400 titles and have finished more
-            than a hundred of those titles. The concept of building a world, not
-            only it’s landscape, but every creature and resource in that world,
-            is why I enjoy manhwas very much.
-          </p>
-        </div>
+      <h1 class="text-[7rem] font-black leading-none tracking-[-3.34px] text-white z-500 absolute top-40">GALLERY</h1>
+      <h2 class="text-[1.5rem] leading-[51px] text-white z-400 absolute top-68">Collection of my favorite memories.</h2>
+      <div class="coverflow absolute top-90 z-30" id="coverflow">
+        <img class="coverflow-card" src="assets/images/mem1.png" draggable="false"/>
+        <img class="coverflow-card" src="assets/images/mem2.png" draggable="false"/>
+        <img class="coverflow-card" src="assets/images/mem3.png" draggable="false"/>
+        <img class="coverflow-card" src="assets/images/mem4.png" draggable="false"/>
+        <img class="coverflow-card" src="assets/images/mem5.png" draggable="false"/>
       </div>
-      <div class="absolute flex justify-center items-center h-[600px] w-[500px] right-30 top-40">
-          
-         <!-- Left card shadow -->
-        <div class="absolute z-0 w-70 h-105 rounded-2xl cardShadow -rotate-30 -translate-x-36 translate-y-8"></div>
-        <!-- Left card -->
-        <div class="absolute z-10 w-70 h-105 rounded-2xl overflow-hidden -rotate-30 -translate-x-35 translate-y-4 shadow-2xl">
-          <img src="assets/images/sssrevival.png" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Right card shadow -->
-        <div class="absolute z-0 w-70 h-105 rounded-2xl cardShadow rotate-30 translate-x-36 translate-y-8"></div>
-        <!-- Right card -->
-        <div class="absolute z-10 w-70 h-105 rounded-2xl overflow-hidden rotate-30 translate-x-35 translate-y-4 shadow-2xl">
-          <img src="assets/images/orv.png" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Center card shadow -->
-        <div class="absolute z-15 w-80 h-120 rounded-2xl cardShadow translate-y-2 translate-x-2"></div>
-        <!-- Center card -->
-        <div class="absolute z-20 w-80 h-120 rounded-2xl overflow-hidden shadow-2xl">
-          <img src="assets/images/boxer.png" class="w-full h-full object-cover">
-        </div>
-        </div>
+      <h2 class="text-[1.5rem] leading-[51px] text-white z-400 absolute bottom-20">Click and drag to switch between images</h2>
     </div>
     <footer
       class="footer z-1000 px-10 py-8 flex justify-between items-start text-white"
@@ -173,5 +139,6 @@
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
