@@ -1,0 +1,27 @@
+:root {
+    --text-color: #F5F1ED;
+    --navbar--footer-bg: #2A2826;
+    --secondary-color: #FF6600;
+    --page-bg: #1F1D1B;
+}
+
+
+#navbar {
+    background-color: var(--navbar--footer-bg);
+    color: var(--text-color);
+    border-bottom: #e55e04 solid 1px;
+}
+.navLinks {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+.active {
+    text-decoration: underline;
+}
+#mainBody {
+    background-color: var(--page-bg);
+    color: var(--text-color);
+}
