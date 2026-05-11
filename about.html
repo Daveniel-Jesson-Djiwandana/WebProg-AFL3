@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOME</title>
+    <title>ABOUT</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,66 +25,67 @@
           src="assets/images/logo.png"
       /></a>
       <ul class="flex space-x-10">
-        <li><a class="active navLinks" href="index.html">HOME</a></li>
-        <li><a class="navLinks" href="about.html">ABOUT</a></li>
+        <li><a class="navLinks" href="index.html">HOME</a></li>
+        <li><a class="active navLinks" href="about.html">ABOUT</a></li>
         <li><a class="navLinks" href="hobby.html">HOBBY</a></li>
         <li><a class="navLinks" href="gallery.html">GALLERY</a></li>
       </ul>
     </nav>
     <div
       id="mainBody"
-      class="relative w-screen h-[140vh] flex flex-col justify-center items-center pt-10 overflow-hidden"
+      class="relative w-screen h-[110vh] flex flex-col justify-center items-center pt-10 overflow-hidden"
     >
       <div
         id="orangeShapesContainer"
         class="absolute top-0 bottom-0 left-0 right-0 z-0"
       >
-        <div class="shape absolute top-0 left-55 w-170 h-70 rotate-150"></div>
+        <div class="shape absolute top-0 -right-45 w-120 h-70 rotate-10"></div>
         <div
-          class="shapeline absolute top-0 -left-85 w-550 h-0 rotate-289"
+          class="shape absolute top-60 -right-35 w-90 h-90 rounded-full"
         ></div>
         <div
-          class="shapeline absolute top-0 -left-60 w-500 h-0 rotate-325"
+          class="shapeline absolute top-15 left-95 w-550 h-0 rotate-130"
         ></div>
         <div
-          class="shape absolute top-70 -left-10 w-40 h-40 rounded-full"
-        ></div>
-        <div class="shape absolute top-90 -left-50 w-120 h-55 rotate-25"></div>
-        <div
-          class="shapeline absolute bottom-50 -left-60 w-150 h-0 rotate-30"
-        ></div>
-        <div class="shape absolute bottom-0 left-0 w-60 h-30 rotate-290"></div>
-        <div
-          class="shape absolute bottom-10 left-80 w-60 h-30 rotate-260"
-        ></div>
-        <div class="shape absolute -top-10 -right-10 w-140 h-90"></div>
-        <div class="shape absolute -bottom-40 -right-10 w-190 h-120"></div>
-        <div
-          class="shape absolute top-45 -right-10 w-80 h-80 rounded-full"
+          class="shape absolute -bottom-20 -left-55 w-170 h-70 rotate-150"
         ></div>
         <div
-          class="shapeline absolute bottom-120 -right-70 w-300 h-0 rotate-300"
-        ></div>
-        <div
-          class="shapeline absolute bottom-120 -right-120 w-300 h-0 rotate-300"
+          class="shapeline absolute bottom-40 -left-55 w-200 h-0 rotate-60"
         ></div>
       </div>
       <div
-        class="absolute top-0 bottom-0 left-0 right-0 z-10 darkOverlayHome"
+        class="absolute top-0 bottom-0 left-0 right-0 z-10 darkOverlayNormal"
       ></div>
       <div
-        class="absolute bottom-0 left-0 right-0 z-20 h-48 gradientHome"
+        class="absolute bottom-0 left-0 right-0 z-20 h-38 gradientNormal"
       ></div>
 
-      <h1
-        class="absolute z-30 poppins-bold mb-0 pb-0 mt-17 tracking-tighter leading-none text-[7rem] top-12 font-bold text-center text-white"
-      >
-        DAVENIEL JESSON<br />DJIWANDANA
-      </h1>
+      <div class="absolute left-16 top-40 z-80 max-w-[60vw]">
+        <h1
+          class="poppins-bold text-[9rem] leading-none tracking-tighter text-white"
+        >
+          HI <span class="text-[9.5rem]">!</span>
+        </h1>
+        <hr class="border-[#D98852] border-t-3 my-4" />
+        <div class="paragraphBG p-2 rounded">
+          <p class="text-white text-[1.5rem] leading-relaxed text-justify">
+            You can call me Jesson. I’ve always been drawn to how technology can
+            help make life easier and more efficient. Growing up, that curiosity
+            grew into a passion for coding and solving problems. I’m currently
+            studying IT at Universitas Ciputra, where I focus on understanding
+            how things work behind the scenes and how to improve them to be even
+            more efficient. I enjoy turning challenges into clear solutions and
+            building digital experiences that feel simple yet also intuitive.
+            What motivates me most is using technology to create something
+            meaningful and impactful that can also help other people across the
+            world.
+          </p>
+        </div>
+      </div>
       <img
         src="assets/images/profile.png"
         loading="eager"
-        class="absolute z-50 w-180 mt-0 pt-0 bottom-0"
+        class="absolute z-50 w-150 bottom-0 -right-20"
       />
     </div>
     <footer

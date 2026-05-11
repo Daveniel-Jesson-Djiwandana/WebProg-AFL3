@@ -4,7 +4,14 @@
     --secondary-color: #FF6600;
     --page-bg: #1F1D1B;
 }
+body, html {
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
 
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none;
+}
 
 #navbar {
     background-color: var(--navbar--footer-bg);
@@ -12,16 +19,75 @@
     border-bottom: #e55e04 solid 1px;
 }
 .navLinks {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
 }
-.active {
-    text-decoration: underline;
+
+
+.navLinks:hover {
+  color: var(--secondary-color);
 }
+
+.navLinks::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.navLinks:hover::after,
+.navLinks.active::after {
+  width: 100%;
+}
+
 #mainBody {
     background-color: var(--page-bg);
     color: var(--text-color);
+}
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.poppins {
+    font-weight: "Poppins", sans-serif;
+}
+.shape {
+    border: solid 6px var(--secondary-color);
+    opacity: 0.7;
+}
+.shapeline {
+    border-top: solid 6px var(--secondary-color);
+    opacity: 0.7;
+}
+.darkOverlayHome {
+    background-color: var(--page-bg);
+    opacity: 0.77;
+}
+.darkOverlayNormal {
+  background: linear-gradient(to bottom, #1F1D1B1A 0%, #000000 100%);
+}
+.footer {
+    background-color: var(--navbar--footer-bg);
+}
+.gradientHome {
+    background-image: linear-gradient(to top, #2a2a2a 0%, rgba(42, 42, 42, 0.8) 50%, transparent 100%);
+}
+.gradientNormal {
+    background-image: linear-gradient(to top, #2a2a2a 0%, rgba(42, 42, 42, 0.1) 50%, transparent 100%);
+}
+.paragraphBG {
+    background-color: rgb(31, 29, 27, 0.42);
+}
+.cardShadow {
+  background-color: rgb(0, 0, 0, 0.5);
 }
