@@ -1,77 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABOUT</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav
-      class="flex items-center justify-between p-3 pr-5 pl-5 lg:p-5 lg:pr-10 lg:pl-10 text-sm lg:text-2xl fixed top-0 left-0 right-0 z-[999]"
-      id="navbar"
-    >
-      <a href="index.html"
-        ><img
-          class="h-10 w-20 object-cover"
-          loading="eager"
-          src="assets/images/logo.png"
-      /></a>
-      <ul class="flex space-x-10">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABOUT</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+
+</head>
+
+<body>
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-[999]">
+    <div class="flex items-center justify-between p-3 px-5 lg:p-5 lg:px-10">
+      <a href="index.html">
+        <img class="h-10 w-20 object-cover" loading="eager" src="assets/images/logo.png" />
+      </a>
+      <ul class="hidden md:flex space-x-10 text-sm lg:text-2xl">
         <li><a class="navLinks" href="index.html">HOME</a></li>
         <li><a class="active navLinks" href="about.html">ABOUT</a></li>
         <li><a class="navLinks" href="hobby.html">HOBBY</a></li>
         <li><a class="navLinks" href="gallery.html">GALLERY</a></li>
       </ul>
-    </nav>
-    <div
-      id="mainBody"
-      class="relative w-screen h-[110vh] flex flex-col justify-center items-center pt-10 overflow-hidden"
-    >
-      <div
-        id="orangeShapesContainer"
-        class="absolute top-0 bottom-0 left-0 right-0 z-0"
-      >
-        <div class="shape absolute top-0 -right-45 w-120 h-70 rotate-10"></div>
-        <div
-          class="shape absolute top-60 -right-35 w-90 h-90 rounded-full"
-        ></div>
-        <div
-          class="shapeline absolute top-15 left-95 w-550 h-0 rotate-130"
-        ></div>
-        <div
-          class="shape absolute -bottom-20 -left-55 w-170 h-70 rotate-150"
-        ></div>
-        <div
-          class="shapeline absolute bottom-40 -left-55 w-200 h-0 rotate-60"
-        ></div>
-      </div>
-      <div
-        class="absolute top-0 bottom-0 left-0 right-0 z-10 darkOverlayNormal"
-      ></div>
-      <div
-        class="absolute bottom-0 left-0 right-0 z-20 h-38 gradientNormal"
-      ></div>
+      <button id="burgerBtn"
+        class="md:hidden flex flex-col justify-center items-center gap-[6px] p-2 rounded focus:outline-none"
+        aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden border-t border-[#e55e04]/40">
+      <ul class="flex flex-col px-5 py-3 space-y-1">
+        <li><a class="navLinks block py-3 text-base" href="index.html">HOME</a></li>
+        <li><a class="active navLinks block py-3 text-base" href="about.html">ABOUT</a></li>
+        <li><a class="navLinks block py-3 text-base" href="hobby.html">HOBBY</a></li>
+        <li><a class="navLinks block py-3 text-base" href="gallery.html">GALLERY</a></li>
+      </ul>
+    </div>
+  </nav>
 
-      <div class="absolute left-16 top-40 z-80 max-w-[60vw]">
-        <h1
-          class="poppins-bold text-[9rem] leading-none tracking-tighter text-white"
-        >
-          HI <span class="text-[9.5rem]">!</span>
+  <div id="mainBody" class="relative w-screen min-h-[90vh] md:min-h-[110vh] overflow-hidden">
+    <div id="orangeShapesContainer" class="absolute top-0 bottom-0 left-0 right-0 z-0">
+      <div class="shape absolute top-0 -right-45 w-120 h-70 rotate-10"></div>
+      <div class="shape absolute top-60 -right-35 w-90 h-90 rounded-full"></div>
+      <div class="shapeline absolute top-15 left-95 w-550 h-0 rotate-130"></div>
+      <div class="shape absolute -bottom-20 -left-55 w-170 h-70 rotate-150"></div>
+      <div class="shapeline absolute bottom-40 -left-55 w-200 h-0 rotate-60"></div>
+    </div>
+    <div class="absolute top-0 bottom-0 left-0 right-0 z-10 darkOverlayNormal"></div>
+    <div class="absolute bottom-0 left-0 right-0 z-20 h-38 gradientNormal"></div>
+
+    <div class="relative z-30 flex flex-col md:block
+              md:absolute md:inset-0
+              px-5 md:px-0
+              pt-24 md:pt-0
+              pb-0">
+
+      <div class="
+            md:absolute
+            md:left-16
+            md:top-40
+            md:max-w-[60vw]
+          ">
+        <h1 class="
+              poppins-bold
+              leading-none
+              tracking-tighter
+              text-white
+
+              text-[4rem]
+              sm:text-[5.5rem]
+
+              md:text-[9rem]
+            ">
+          HI <span class="text-[4.3rem] sm:text-[5.8rem] md:text-[9.5rem]">!</span>
         </h1>
+
         <hr class="border-[#D98852] border-t-3 my-4" />
+
         <div class="paragraphBG p-2 rounded">
-          <p class="text-white text-[1.5rem] leading-relaxed text-justify">
-            You can call me Jesson. I’ve always been drawn to how technology can
+          <p class="
+                text-white
+                leading-relaxed
+                text-justify
+
+                text-[0.9rem]
+                sm:text-[1.05rem]
+
+                md:text-[1.5rem]
+              ">
+            You can call me Jesson. I've always been drawn to how technology can
             help make life easier and more efficient. Growing up, that curiosity
-            grew into a passion for coding and solving problems. I’m currently
+            grew into a passion for coding and solving problems. I'm currently
             studying IT at Universitas Ciputra, where I focus on understanding
             how things work behind the scenes and how to improve them to be even
             more efficient. I enjoy turning challenges into clear solutions and
@@ -82,78 +109,126 @@
           </p>
         </div>
       </div>
-      <img
-        src="assets/images/profile.png"
-        loading="eager"
-        class="absolute z-50 w-150 bottom-0 -right-20"
-      />
-    </div>
-    <footer
-      class="footer z-1000 px-10 py-8 flex justify-between items-start text-white"
-    >
-      <div id="left" class="max-w-sm">
-        <p class="font-bold text-lg mb-2 poppins">Daveniel Jesson Djiwandana</p>
-        <p class="text-sm text-gray-400 poppins">
-          Aspiring programmer and undergraduate student passionate about
-          creating meaningful digital experiences.
-        </p>
+
+      <div class="
+            flex justify-center
+            -mt-12
+            md:absolute
+            md:top-0
+            md:bottom-0
+            md:right-0
+            md:w-[42vw]
+            md:flex
+            md:justify-end
+            md:items-end
+            md:mt-0
+          ">
+        <img src="assets/images/profile.png" loading="eager" class="
+              w-[78vw]
+              
+              md:w-[30rem]
+              lg:w-[50rem]
+            " />
       </div>
-      <div id="middle">
-        <p class="font-bold text-lg mb-3 poppins">Contacts</p>
-        <p class="text-sm text-gray-400 mb-2 poppins">
-          <img
-            class="w-[2.5rem] h-[2.5rem] object-cover inline-block"
-            src="assets/images/phone.png"
-            loading="eager"
-          />
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+  <footer class="footer z-1000
+         px-4 md:px-8
+         py-6 md:py-8
+         flex flex-col md:flex-row
+         items-start md:items-center 
+         justify-between
+         gap-8 md:gap-0
+         text-white">
+    <div id="left" class="md:flex-1">
+      <p class="font-bold text-sm md:text-base mb-1 md:mb-2 poppins">
+        Daveniel Jesson Djiwandana
+      </p>
+      <p class="text-[0.7rem] md:text-[0.8rem] text-gray-400 poppins leading-relaxed">
+        Aspiring programmer and undergraduate student passionate about
+        creating meaningful digital experiences.
+      </p>
+    </div>
+
+    <div id="middle" class="hidden md:flex md:flex-1 md:flex-col md:items-center">
+      <div class="w-fit">
+        <p class="font-bold text-base mb-3 poppins">Contacts</p>
+        <p class="text-[0.8rem] text-gray-400 mb-2 poppins flex items-center gap-2">
+          <img class="w-[1.8rem] h-[1.8rem] object-cover" src="assets/images/phone.png" loading="eager" />
           +62 813 3293 1068
         </p>
-        <p class="text-sm text-gray-400 poppins">
-          <img
-            class="w-[2.5rem] h-[2.5rem] object-cover inline-block"
-            src="assets/images/whatsapp.png"
-            loading="eager"
-          />
+        <p class="text-[0.8rem] text-gray-400 poppins flex items-center gap-2">
+          <img class="w-[1.8rem] h-[1.8rem] object-cover" src="assets/images/whatsapp.png" loading="eager" />
           +62 813 3256 6436
         </p>
       </div>
-      <div id="right">
-        <p class="font-bold text-lg mb-3 poppins">Connects</p>
-        <div class="grid grid-cols-2 gap-2 text-sm text-gray-400 poppins">
-          <p class="poppins">
-            <img
-              class="w-[2.5rem] h-[2.5rem] object-cover inline-block"
-              src="assets/images/email.png"
-              loading="eager"
-            />
+    </div>
+
+    <div id="right" class="hidden md:flex md:flex-1 md:flex-col md:items-center">
+      <div class="w-fit">
+        <p class="font-bold text-base mb-3 poppins">Connects</p>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-[0.8rem] text-gray-400 poppins">
+          <p class="flex items-center gap-2">
+            <img class="w-[1.8rem] h-[1.8rem] object-cover" src="assets/images/email.png" loading="eager" />
             d.jesson.dji@gmail.com
           </p>
-          <p class="poppins">
-            <img
-              class="w-[2.5rem] h-[2.5rem] object-cover inline-block"
-              src="assets/images/linkedin.png"
-              loading="eager"
-            />
+          <p class="flex items-center gap-2">
+            <img class="w-[1.8rem] h-[1.8rem] object-cover" src="assets/images/linkedin.png" loading="eager" />
             Daveniel Jesson Djiwandana
           </p>
-          <p class="poppins">
-            <img
-              class="w-[2.5rem] h-[2.5rem] object-cover inline-block"
-              src="assets/images/github.png"
-              loading="eager"
-            />
+          <p class="flex items-center gap-2">
+            <img class="w-[1.8rem] h-[1.8rem] object-cover" src="assets/images/github.png" loading="eager" />
             Daveniel-Jesson-Djiwandana
           </p>
-          <p class="poppins">
-            <img
-              class="w-[2.5rem] h-[2.5rem] object-cover inline-block"
-              src="assets/images/instagram.png"
-              loading="eager"
-            />
+          <p class="flex items-center gap-2">
+            <img class="w-[1.8rem] h-[1.8rem] object-cover" src="assets/images/instagram.png" loading="eager" />
             d.jesson_d
           </p>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+
+    <div class="flex flex-row w-full gap-4 md:hidden">
+      <div class="flex-1">
+        <p class="font-bold text-sm mb-2 poppins">Connects</p>
+        <div class="flex flex-col gap-1.5 text-[0.7rem] text-gray-400 poppins">
+          <p class="flex items-center gap-1.5">
+            <img class="w-[1.4rem] h-[1.4rem] object-cover" src="assets/images/email.png" loading="eager" />
+            d.jesson.dji@gmail.com
+          </p>
+          <p class="flex items-center gap-1.5">
+            <img class="w-[1.4rem] h-[1.4rem] object-cover" src="assets/images/linkedin.png" loading="eager" />
+            Daveniel Jesson
+          </p>
+          <p class="flex items-center gap-1.5">
+            <img class="w-[1.4rem] h-[1.4rem] object-cover" src="assets/images/github.png" loading="eager" />
+            Daveniel-Jesson
+          </p>
+          <p class="flex items-center gap-1.5">
+            <img class="w-[1.4rem] h-[1.4rem] object-cover" src="assets/images/instagram.png" loading="eager" />
+            d.jesson_d
+          </p>
+        </div>
+      </div>
+      <div class="flex-shrink-0">
+        <p class="font-bold text-sm mb-2 poppins">Contacts</p>
+        <p class="text-[0.7rem] text-gray-400 mb-1.5 poppins flex items-center gap-1.5">
+          <img class="w-[1.4rem] h-[1.4rem] object-cover" src="assets/images/phone.png" loading="eager" />
+          +62 813 3293 1068
+        </p>
+        <p class="text-[0.7rem] text-gray-400 poppins flex items-center gap-1.5">
+          <img class="w-[1.4rem] h-[1.4rem] object-cover" src="assets/images/whatsapp.png" loading="eager" />
+          +62 813 3256 6436
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
