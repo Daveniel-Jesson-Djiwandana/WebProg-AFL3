@@ -1,42 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const burgerBtn = document.getElementById("burgerBtn");
+  const burgerButton = document.getElementById("burgerBtn");
   const mobileMenu = document.getElementById("mobileMenu");
 
-  if (burgerBtn && mobileMenu) {
-    burgerBtn.addEventListener("click", () => {
+  if (burgerButton && mobileMenu) {
+    burgerButton.addEventListener("click", () => {
       mobileMenu.classList.toggle("open");
-      burgerBtn.classList.toggle("open");
+      burgerButton.classList.toggle("open");
     });
   }
 });
 
-const coverflow = document.getElementById("coverflow");
-if (coverflow) {
-  const cfCards = Array.from(coverflow.children);
+const coverflowContainer = document.getElementById("coverflow");
 
-  let cfCurrentIndex = Math.floor(cfCards.length / 2);
-  let cfIsDragging = false;
-  let cfStartX = 0;
+if (coverflowContainer) {
+  const allCards = Array.from(coverflowContainer.children);
+  let activeCardIndex = Math.floor(allCards.length / 2);
+  let isDragging = false;
+  let dragStartX = 0;
 
   function updateCoverflow() {
-    const containerWidth = coverflow.clientWidth;
-    const angle = 45;
-    const offset = Math.min(containerWidth * 0.38, 200);
+    const containerWidth = coverflowContainer.clientWidth;
+    const rotationAngle = 45;
+    const spaceBetweenCards = Math.min(containerWidth * 0.38, 200);
 
-    cfCards.forEach((card, i) => {
-      const diff = i - cfCurrentIndex;
-      const zIndex = 10 - Math.abs(diff);
-      const scale = diff === 0 ? 1 : 0.75;
-      const shadowBlur = diff === 0 ? 40 : 20;
-      const shadowOpacity = diff === 0 ? 0.9 : 0.5;
-      card.style.zIndex = zIndex;
-      card.style.pointerEvents = diff === 0 ? "auto" : "none";
-      card.style.filter = `drop-shadow(0px 20px ${shadowBlur}px rgba(0,0,0,${shadowOpacity}))`;
-      card.style.transform = `translateX(calc(-50% + ${diff * offset}px))
-      translateY(-50%)
-      translateZ(${-Math.abs(diff) * 80}px)
-      scale(${scale})
-      rotateY(${diff * -angle}deg)`;
+    allCards.forEach((card, cardIndex) => {
+      const distanceFromCenter = cardIndex - activeCardIndex;
+      const stackOrder = 10 - Math.abs(distanceFromCenter);
+      const cardScale = distanceFromCenter === 0 ? 1 : 0.75;
+      const shadowSize = distanceFromCenter === 0 ? 40 : 20;
+      const shadowDarkness = distanceFromCenter === 0 ? 0.9 : 0.5;
+
+      card.style.zIndex = stackOrder;
+      card.style.pointerEvents = distanceFromCenter === 0 ? "auto" : "none";
+      card.style.filter = `drop-shadow(0px 20px ${shadowSize}px rgba(0,0,0,${shadowDarkness}))`;
+      card.style.transform = `
+        translateX(calc(-50% + ${distanceFromCenter * spaceBetweenCards}px))
+        translateY(-50%)
+        translateZ(${-Math.abs(distanceFromCenter) * 80}px)
+        scale(${cardScale})
+        rotateY(${distanceFromCenter * -rotationAngle}deg)
+      `;
     });
   }
 
@@ -44,50 +47,54 @@ if (coverflow) {
 
   window.addEventListener("resize", updateCoverflow);
 
-  window.addEventListener("mousedown", (e) => {
-    cfIsDragging = true;
-    cfStartX = e.clientX;
+  window.addEventListener("mousedown", (event) => {
+    isDragging = true;
+    dragStartX = event.clientX;
   });
 
-  window.addEventListener("mousemove", (e) => {
-    if (!cfIsDragging) return;
-    const deltaX = e.clientX - cfStartX;
-    if (deltaX > 30 && cfCurrentIndex > 0) {
-      cfCurrentIndex--;
-      cfStartX = e.clientX;
+  window.addEventListener("mousemove", (event) => {
+    if (!isDragging) return;
+
+    const dragDistance = event.clientX - dragStartX;
+
+    if (dragDistance > 30 && activeCardIndex > 0) {
+      activeCardIndex--;
+      dragStartX = event.clientX;
       updateCoverflow();
-    } else if (deltaX < -30 && cfCurrentIndex < cfCards.length - 1) {
-      cfCurrentIndex++;
-      cfStartX = e.clientX;
+    } else if (dragDistance < -30 && activeCardIndex < allCards.length - 1) {
+      activeCardIndex++;
+      dragStartX = event.clientX;
       updateCoverflow();
     }
   });
 
   window.addEventListener("mouseup", () => {
-    cfIsDragging = false;
+    isDragging = false;
   });
 
   window.addEventListener(
     "touchstart",
-    (e) => {
-      cfIsDragging = true;
-      cfStartX = e.touches[0].clientX;
+    (event) => {
+      isDragging = true;
+      dragStartX = event.touches[0].clientX;
     },
     { passive: true }
   );
 
   window.addEventListener(
     "touchmove",
-    (e) => {
-      if (!cfIsDragging) return;
-      const deltaX = e.touches[0].clientX - cfStartX;
-      if (deltaX > 30 && cfCurrentIndex > 0) {
-        cfCurrentIndex--;
-        cfStartX = e.touches[0].clientX;
+    (event) => {
+      if (!isDragging) return;
+
+      const dragDistance = event.touches[0].clientX - dragStartX;
+
+      if (dragDistance > 30 && activeCardIndex > 0) {
+        activeCardIndex--;
+        dragStartX = event.touches[0].clientX;
         updateCoverflow();
-      } else if (deltaX < -30 && cfCurrentIndex < cfCards.length - 1) {
-        cfCurrentIndex++;
-        cfStartX = e.touches[0].clientX;
+      } else if (dragDistance < -30 && activeCardIndex < allCards.length - 1) {
+        activeCardIndex++;
+        dragStartX = event.touches[0].clientX;
         updateCoverflow();
       }
     },
@@ -95,6 +102,6 @@ if (coverflow) {
   );
 
   window.addEventListener("touchend", () => {
-    cfIsDragging = false;
+    isDragging = false;
   });
 }
